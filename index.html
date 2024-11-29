@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <style>
+        /* Modern CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Variables for consistent styling */
+        :root {
+            --primary-color: #2d3436;
+            --accent-color: #0984e3;
+            --text-color: #2d3436;
+            --background-color: #ffffff;
+            --section-padding: 4rem 2rem;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+
+        /* Header Styles */
+        header {
+            padding: var(--section-padding);
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 1rem;
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Section Styles */
+        section {
+            padding: var(--section-padding);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        /* Project Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: #f5f6fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .skill-tag {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        button {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0873c5;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Om Anand</h1>
+        <p>Engineer</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm a software engineer passionate about building elegant solutions using modern technologies. I specialize in Rust development and have a keen interest in systems programming and machine learning.</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>mini_os</h3>
+                <p>A simple kernel for x86 architecture with paging implementation, heap allocator and interrupt support (keyboard and timer).</p>
+            </div>
+            <div class="project-card">
+                <h3>rust_cnn</h3>
+                <p>A convolutional neural network written from scratch using bare mathematics that achieves 92% accuracy on MNIST dataset in just 5 epochs.</p>
+            </div>
+            <div class="project-card">
+                <h3>rust_turing</h3>
+                <p>A custom halting turing machine.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <span class="skill-tag">Rust</span>
+            <span class="skill-tag">Systems Programming</span>
+            <span class="skill-tag">Deep Learning</span>
+            <span class="skill-tag">Problem Solving</span>
+            <span class="skill-tag">Computational Complexity</span>
+            <span class="skill-tag">Linux</span>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Form submission handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! This is a demo form - please replace with your actual contact form implementation.');
+        });
+    </script>
+</body>
+</html>
